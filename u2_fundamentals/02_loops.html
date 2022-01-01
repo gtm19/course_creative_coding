@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h3>
+    Now let's do loops
+  </h3>
+  <p>
+    Hit refresh - different squares should be filled in every time
+  </p>
+  <p>
+    Open up web developer tools to see comments
+  </p>
+  <canvas id="canvas" width="600" height="600" />
+
+</body>
+<script>
+  const canvas = document.querySelector("#canvas");
+  // 2 dimensions
+  const context = canvas.getContext("2d");
+
+  const drawSquare = (x, y, width, height, fill = "#FF5959") => {
+    context.lineWidth = 4;
+    context.beginPath();
+    context.rect(x, y, width, height);
+    context.fillStyle = fill;
+    context.fill();
+  }
+
+  const width = 50;
+  const height = width;
+  const gap = 10;
+  const offset = 8;
+  let x, y;
+  for (let i = 0; i < 5; i++) {
+    for (let j = 0; j < 5; j++) {
+      x = 100 + (width + gap) * i;
+      y = 100 + (width + gap) * j;
+
+    drawSquare(x, y, width, height);
+
+    if (Math.random() > 0.6) {
+        drawSquare(x + offset, y + offset, width - offset * 2, height - offset * 2, fill = "#676FA3");
+      }
+    }
+  }
+</script>
+</html>

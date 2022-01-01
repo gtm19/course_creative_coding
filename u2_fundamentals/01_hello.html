@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h3>
+    This is a little introduction to Canvas
+  </h3>
+  <p>
+    Open up web developer tools to see comments
+  </p>
+  <canvas id="canvas" width="600" height="600" />
+
+</body>
+<script>
+  const canvas = document.querySelector("#canvas");
+  // 2 dimensions
+  const context = canvas.getContext("2d");
+
+  // Making a base yellow rectangle
+  context.fillStyle = "#F9D371";
+  context.fillRect(100, 100, 400, 400);
+
+  // Putting an orange stroke around it
+  context.lineWidth = 4;
+  context.beginPath();
+  context.rect(100, 100, 400, 400);
+  context.strokeStyle = "#F47340";
+  context.stroke();
+
+  // Putting a colourful circle over the top
+  context.beginPath();
+  context.arc(300, 300, 100, 0, Math.PI * 2);
+  context.fillStyle = "#EF2F88";
+  context.strokeStyle = "#8843F2";
+  context.fill();
+  context.stroke();
+</script>
+</html>
