@@ -4,6 +4,16 @@ Here be the code I have written as part of the [Domestika Creative Coding with J
 
 ## Development
 
+### Install dependencies
+
+All the code in here was written using `node v14.15.0` and `npm v6.14.8`.
+
+Before doing anything else, you will need to install dependencies:
+
+```
+npm install
+```
+
 ### `canvas-sketch` CLI
 
 To create a new sketch, use the following command:
