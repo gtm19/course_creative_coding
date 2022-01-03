@@ -7,6 +7,7 @@ const settings = {
 let text = "A";
 let fontSize = 1200;
 let fontFamily = "serif";
+let manager;
 
 const sketch = () => {
   return ({ context, width, height }) => {
@@ -45,4 +46,17 @@ const sketch = () => {
 
 };
 
-canvasSketch(sketch, settings);
+document.addEventListener("keyup", (e) => {
+  console.log(e);
+  key = e.key;
+  if (key !== "Shift") {
+    text = e.key;
+    manager.render();
+  }
+});
+
+const start = async () => {
+  manager = await canvasSketch(sketch, settings);
+};
+
+start();
